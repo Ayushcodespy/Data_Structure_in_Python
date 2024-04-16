@@ -1,7 +1,10 @@
-array = []
+# creation of an empty array
+array = []   
+
+# Taking input for deciding array length
 loop = int(input("How many elements you want to enter in array : "))
 for x in range(loop):
-    value = int(input(f"Enter value {x+1} : "))
+    value = int(input(f"Enter value {x+1} : "))    # taking elements of arrays by user
     array.append(value)
 
 
