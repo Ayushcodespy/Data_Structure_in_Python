@@ -1,0 +1,4 @@
+{
+    "testing.automaticallyOpenPeekViewDuringAutoRun": false,
+    "code-runner.runInTerminal": true
+}
