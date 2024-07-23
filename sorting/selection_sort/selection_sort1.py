@@ -10,6 +10,7 @@ for i in range(n-1):
         if(lst[j] < lst[min]):
             min = j
 
+    # swap the numbers if number is less than min_index number
     temp = lst[i]
     lst[i] = lst[min]
     lst[min] = temp

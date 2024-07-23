@@ -9,6 +9,6 @@
 <h2>Selection Sort</h2>
 <b>The Selection Sort algorithm finds the lowest value in an array and moves it to the front of the array.</b>
 <h4>Algorithm: </h4>
-- Go through the array to find the lowest value.
-- Move the lowest value to the front of the unsorted part of the array.
-- Go through the array again as many times as there are values in the array.
+- Go through the array to find the lowest value.<br>
+- Move the lowest value to the front of the unsorted part of the array.<br>
+- Go through the array again as many times as there are values in the array.<br>
