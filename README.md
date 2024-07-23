@@ -1,5 +1,5 @@
 # Data_Structure_in_Python
-<h2>Bubble Sort</h2>
+<h2 style="color:blue;">Bubble Sort</h2>
 <b>Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order.</b>
 <h4>Algorithm: </h4>
 - traverse from left and compare adjacent elements and the higher one is placed at right side. <br>
