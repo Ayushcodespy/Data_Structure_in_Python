@@ -11,6 +11,7 @@ class SinglyLinkedList:
     def empty(self):
         return self.head is None
 
+    # -------- Insertion Operations ---------
     def insert_at_start(self, data):
         new = Node(data, self.head)
         self.head = new
@@ -42,6 +43,35 @@ class SinglyLinkedList:
             print("List is empty")
             return
 
+    # -------- Delete Operations ---------
+    def delete_first(self, a="first"):
+        if self.empty():
+            print("------- List doesnt have any node -------")
+
+        else:
+            temp = self.head
+            self.head = temp.next
+            print(f"------ {a} Node which contains {temp.data} is deleted ------")
+
+    def delete_last(self):
+        temp = self.head
+
+        if self.empty():
+            print("------- List doesnt have any node -------")
+
+        elif temp.next is None:
+            a = "last"
+            self.delete_first(a)
+
+        else:
+            prev = None
+            while temp.next is not None:
+                prev = temp
+                temp = temp.next
+            prev.next = None
+            print(f"------ Last Node which contains {temp.data} is deleted ------")
+
+    # ------- Printing Linked List ---------
     def print_lst(self):
         if not self.empty():
             temp = self.head
@@ -52,20 +82,21 @@ class SinglyLinkedList:
         else:
             print("List is empty")
 
-    def delete_first(self):
-        temp = self.head
-        self.head = temp.next
-
 
 def runcode(arr):
-    print('''\n Select operations in Linked List: 
-        1. Insert at start
-        2. Insert at last
-        3. Insert at specific place
-        4. Show list
-        5. Delete first element''')
     choice = int(input("Select Operation : "))
-    if choice == 1:
+
+    if choice == 0:
+        print('''\n Select operations in Linked List: 
+            0. Show Operations
+            1. Insert at start
+            2. Insert at last
+            3. Insert at specific place
+            4. Show list
+            5. Delete First Node
+            6. Delete Last Node''')
+
+    elif choice == 1:
         data = int(input("Enter data to insert : "))
         arr.insert_at_start(data)
 
@@ -85,11 +116,22 @@ def runcode(arr):
     elif choice == 5:
         arr.delete_first()
 
+    elif choice == 6:
+        arr.delete_last()
+
     else:
         print("Please select a correct option")
 
 
 lst = SinglyLinkedList()
+print('''\n Select operations in Linked List: 
+            0. Show Operations
+            1. Insert at start
+            2. Insert at last
+            3. Insert at specific place
+            4. Show list
+            5. Delete First Node
+            6. Delete Last Node''')
 loop = 1
 while loop == 1:
     runcode(lst)
