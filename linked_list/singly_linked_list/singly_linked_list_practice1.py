@@ -71,6 +71,18 @@ class SinglyLinkedList:
             prev.next = None
             print(f"------ Last Node which contains {temp.data} is deleted ------")
 
+    def delete_at(self, index):
+        temp = self.head
+        prev = None
+        try:
+            for i in range(index - 1):
+                prev = temp
+                temp = temp.next
+            prev.next = temp.next
+            print(f"{index}(th/nd) Node is deleted which contains {temp.data}")
+        except AttributeError:
+            print(f"{index}(th/nd) node doesnt exist")
+
     # ------- Printing Linked List ---------
     def print_lst(self):
         if not self.empty():
@@ -98,6 +110,7 @@ def operations(arr):
             4. Show list
             5. Delete First Node
             6. Delete Last Node
+            7. Delete Specific Node
             8. Exit the Program''')
 
     elif choice == 1:
@@ -138,6 +151,19 @@ def operations(arr):
 
     elif choice == 6:
         arr.delete_last()
+
+    elif choice == 7:
+        try:
+            index = int(input("Which node you want to delete : "))
+        except ValueError:
+            print("Invalid index number")
+            return
+        if index == 0:
+            print("Enter valid (nth) number of Node")
+        elif index == 1:
+            arr.delete_first()
+        else:
+            arr.delete_at(index)
 
     elif choice == 8:
         return False
