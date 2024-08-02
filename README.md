@@ -33,6 +33,7 @@
 
 
 <br><br><br><br><br><br><br><br>
+<hr>
 <!-- Linked List Starts From Here -->
 <h1 style="color: #0cb5f2;"><i>Linked Lists</i></h1>
 <b>A Linked List is, as the word implies, a list where the nodes are linked together. Each node contains data and a pointer. The way they are linked together is that each node points to where in the memory the next node is placed.</b>
@@ -43,3 +44,27 @@
     <li><h4>Doubly Linked Lists</h4></li>
     <li><h4>Circular Linked Lists</h4></li>
 </ul>
+<br>
+<h3 style="color:grey;">Singly Linked List</h3>
+A singly linked list consists of nodes where each node contains a data field and a reference (link) to the next node in the sequence.
+
+<div>
+<svg width="500" height="150">
+  <!-- First Node -->
+  <rect x="50" y="50" width="80" height="40" stroke="black" fill="none"/>
+  <text x="75" y="75" font-family="Verdana" font-size="15" fill="black">Node 1</text>
+  <line x1="130" y1="70" x2="180" y2="70" stroke="black" />
+
+  <!-- Second Node -->
+  <rect x="180" y="50" width="80" height="40" stroke="black" fill="none"/>
+  <text x="205" y="75" font-family="Verdana" font-size="15" fill="black">Node 2</text>
+  <line x1="260" y1="70" x2="310" y2="70" stroke="black" />
+
+  <!-- Third Node -->
+  <rect x="310" y="50" width="80" height="40" stroke="black" fill="none"/>
+  <text x="335" y="75" font-family="Verdana" font-size="15" fill="black">Node 3</text>
+  <line x1="390" y1="70" x2="440" y2="70" stroke="black" />
+  <text x="450" y="75" font-family="Verdana" font-size="15" fill="black">NULL</text>
+</svg>
+</div>
+
