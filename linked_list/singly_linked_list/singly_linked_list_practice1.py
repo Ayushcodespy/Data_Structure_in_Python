@@ -62,7 +62,8 @@ def runcode(arr):
         1. Insert at start
         2. Insert at last
         3. Insert at specific place
-        4. Show list''')
+        4. Show list
+        5. Delete first element''')
     choice = int(input("Select Operation : "))
     if choice == 1:
         data = int(input("Enter data to insert : "))
@@ -80,6 +81,9 @@ def runcode(arr):
 
     elif choice == 4:
         arr.print_lst()
+
+    elif choice == 5:
+        arr.delete_first()
 
     else:
         print("Please select a correct option")
