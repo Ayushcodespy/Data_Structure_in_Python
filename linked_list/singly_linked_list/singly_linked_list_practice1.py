@@ -83,8 +83,11 @@ class SinglyLinkedList:
             print("List is empty")
 
 
-def runcode(arr):
-    choice = int(input("Select Operation : "))
+def operations(arr):
+    try:
+        choice = int(input("Select Operation : "))
+    except ValueError:
+        choice = None
 
     if choice == 0:
         print('''\n Select operations in Linked List: 
@@ -94,19 +97,36 @@ def runcode(arr):
             3. Insert at specific place
             4. Show list
             5. Delete First Node
-            6. Delete Last Node''')
+            6. Delete Last Node
+            8. Exit the Program''')
 
     elif choice == 1:
-        data = int(input("Enter data to insert : "))
+        try:
+            data = int(input("Enter data to insert : "))
+        except ValueError:
+            print("You entered invalid value")
+            return
         arr.insert_at_start(data)
 
     elif choice == 2:
-        data = int(input("Enter data to insert : "))
+        try:
+            data = int(input("Enter data to insert : "))
+        except ValueError:
+            print("You entered invalid value")
+            return
         arr.insert_at_last(data)
 
     elif choice == 3:
-        data = int(input("Enter data to insert : "))
-        index = int(input("In which place you want to insert : "))
+        try:
+            data = int(input("Enter data to insert : "))
+        except ValueError:
+            print("You entered invalid value")
+            return
+        try:
+            index = int(input("In which place you want to insert : "))
+        except ValueError:
+            print("You entered invalid value")
+            return
         index = index - 1
         arr.inert_at_nth_place(data, index)
 
@@ -119,20 +139,32 @@ def runcode(arr):
     elif choice == 6:
         arr.delete_last()
 
+    elif choice == 8:
+        return False
+
     else:
         print("Please select a correct option")
 
 
-lst = SinglyLinkedList()
-print('''\n Select operations in Linked List: 
-            0. Show Operations
-            1. Insert at start
-            2. Insert at last
-            3. Insert at specific place
-            4. Show list
-            5. Delete First Node
-            6. Delete Last Node''')
-loop = 1
-while loop == 1:
-    runcode(lst)
-    loop = int(input("Press 1 to continue : "))
+def runcode():
+    lst = SinglyLinkedList()
+    print('''\n Select operations in Linked List: 
+                0. Show Operations
+                1. Insert at start
+                2. Insert at last
+                3. Insert at specific place
+                4. Show list
+                5. Delete First Node
+                6. Delete Last Node
+                8. Exit the Program''')
+    loop = 1
+    while loop == 1:
+        operations(lst)
+        try:
+            loop = int(input("Press 1 to continue : "))
+        except ValueError:
+            print("Thankyou! You exited the program...")
+            loop = False
+
+
+runcode()
