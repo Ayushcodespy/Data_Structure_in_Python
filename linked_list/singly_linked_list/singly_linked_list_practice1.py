@@ -25,6 +25,23 @@ class SinglyLinkedList:
         else:
             self.insert_at_start(data)
 
+    def inert_at_nth_place(self, data, index):
+        if index == 0:
+            self.insert_at_start(data)
+
+        elif not self.empty():
+            temp = self.head
+            for i in range(index - 1):
+                if temp is None:
+                    print("Index is out of Bounds")
+                    return
+                temp = temp.next
+            new = Node(data, temp.next)
+            temp.next = new
+        else:
+            print("List is empty")
+            return
+
     def print_lst(self):
         if not self.empty():
             temp = self.head
@@ -35,9 +52,41 @@ class SinglyLinkedList:
         else:
             print("List is empty")
 
+    def delete_first(self):
+        temp = self.head
+        self.head = temp.next
+
+
+def runcode(arr):
+    print('''\n Select operations in Linked List: 
+        1. Insert at start
+        2. Insert at last
+        3. Insert at specific place
+        4. Show list''')
+    choice = int(input("Select Operation : "))
+    if choice == 1:
+        data = int(input("Enter data to insert : "))
+        arr.insert_at_start(data)
+
+    elif choice == 2:
+        data = int(input("Enter data to insert : "))
+        arr.insert_at_last(data)
+
+    elif choice == 3:
+        data = int(input("Enter data to insert : "))
+        index = int(input("In which place you want to insert : "))
+        index = index - 1
+        arr.inert_at_nth_place(data, index)
+
+    elif choice == 4:
+        arr.print_lst()
+
+    else:
+        print("Please select a correct option")
+
 
 lst = SinglyLinkedList()
-lst.insert_at_start(12)
-lst.insert_at_last(24)
-lst.insert_at_start(71)
-lst.print_lst()
+loop = 1
+while loop == 1:
+    runcode(lst)
+    loop = int(input("Press 1 to continue : "))
