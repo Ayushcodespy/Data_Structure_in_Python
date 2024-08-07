@@ -13,3 +13,6 @@ class DLL:
     def empty(self):
         return self.head is None
 
+    def insert_at_start(self, data,):
+        new = Node(data, self.head)
+        new.next = self.head
