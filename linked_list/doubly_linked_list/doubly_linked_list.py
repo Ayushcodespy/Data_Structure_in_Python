@@ -39,5 +39,6 @@ dll.insert_at_start(10)
 dll.insert_at_start(20)
 dll.insert_at_start(30)
 dll.insert_at_last(40)
+dll.insert_at_start(5)
 
 dll.show()
