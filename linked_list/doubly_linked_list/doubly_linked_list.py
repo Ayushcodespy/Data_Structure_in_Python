@@ -5,14 +5,25 @@ class Node:
         self.next = _next
 
 
-class DLL:
-
-    def __int__(self, head=None):
+class Dll:
+    def __init__(self, head=None):
         self.head = head
 
-    def empty(self):
-        return self.head is None
+    def insert_at_start(self, data):
+        new = Node(data, None, self.head)
+        self.head = new
 
-    def insert_at_start(self, data,):
-        new = Node(data, self.head)
-        new.next = self.head
+    def show(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.data)
+            temp = temp.next
+
+
+dll = Dll()
+
+dll.insert_at_start(10)
+dll.insert_at_start(20)
+dll.insert_at_start(30)
+
+dll.show()
