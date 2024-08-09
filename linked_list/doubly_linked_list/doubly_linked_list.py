@@ -13,6 +13,19 @@ class Dll:
         new = Node(data, None, self.head)
         self.head = new
 
+    def insert_at_last(self, data):
+        new = Node(data)
+        if self.head is None:
+            self.head = new
+            return
+
+        temp = self.head
+        while temp.next is not None:
+            temp = temp.next
+
+        temp.next = new
+        new.prev = temp
+
     def show(self):
         temp = self.head
         while temp is not None:
@@ -25,5 +38,6 @@ dll = Dll()
 dll.insert_at_start(10)
 dll.insert_at_start(20)
 dll.insert_at_start(30)
+dll.insert_at_last(40)
 
 dll.show()
