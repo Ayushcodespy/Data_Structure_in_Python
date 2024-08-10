@@ -26,6 +26,25 @@ class Dll:
         temp.next = new
         new.prev = temp
 
+    def insert_at_index(self, data, index):
+        if index == 0:
+            self.insert_at_start(data)
+            return
+
+        new = Node(data)
+        temp = self.head
+        for i in range(index - 1):
+            if temp is None:
+                raise IndexError("Index out of range")
+            temp = temp.next
+
+        new.next = temp.next
+        new.prev = temp
+
+        if temp.next is not None:
+            temp.next.prev = new
+        temp.next = new
+
     def show(self):
         temp = self.head
         while temp is not None:
@@ -40,5 +59,6 @@ dll.insert_at_start(20)
 dll.insert_at_start(30)
 dll.insert_at_last(40)
 dll.insert_at_start(5)
+dll.insert_at_index(34, 2)
 
 dll.show()
