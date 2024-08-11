@@ -68,3 +68,6 @@ A singly linked list consists of nodes where each node contains a data field and
 </svg>
 </div>
 
+<!-- Recursion Starts From Here -->
+<h1 style="color: #0cb5f2;"><i>Recursion</i></h1>
+

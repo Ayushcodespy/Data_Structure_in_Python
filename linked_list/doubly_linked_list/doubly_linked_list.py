@@ -60,5 +60,6 @@ dll.insert_at_start(30)
 dll.insert_at_last(40)
 dll.insert_at_start(5)
 dll.insert_at_index(34, 2)
+dll.insert_at_index(67, 2)
 
 dll.show()
